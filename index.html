@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Blockpass Demo</title>
+    <title>BCA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,8 +26,8 @@
     <meta name="msapplication-TileImage" content="/blockpass_demo_assets/images/ms-icon-144x144.png">
     <meta name="theme-color" content="#E6E6E6">
     <meta name="description" content="Home page">
-    <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99834864-5"></script>
     <script>
@@ -58,8 +58,8 @@
         (function () {
 
             const clientId = getQueryVariable('clientId') || 'blockpass_sales_demo';
-            const serviceName = getQueryVariable('serviceName') || 'Blockpass';
-            const refId = getQueryVariable('refId') || 'rdm-' + Date.now();
+            const serviceName = getQueryVariable('serviceName') || 'Blockchain Advisory';
+            const refId = getQueryVariable('refId') || 'ref' + Date.now();
             const env = getQueryVariable('env') || 'prod';
             //console.log(clientId, env);
 
@@ -68,13 +68,8 @@
 
             document.body.onload = function () {
                 document.getElementById('service-name').innerHTML = serviceName;
-                document.getElementById('env').innerHTML = env;
-                if (env == 'staging') {
-                    document.getElementById('ios').setAttribute('href', 'https://testflight.apple.com/join/JavudHsa');
-                    document.getElementById('android').setAttribute('href', 'https://play.google.com/apps/testing/com.blockpass_mobile.staging ');
-                }
                 document.getElementById('blockpass-app-link').href = deepLink;
-
+                document.getElementById('JotFormIFrame-90981722709465').setAttribute('src', 'https://form.jotform.me/90981722709465?refId='+refId);
             }
 
             const s = document.createElement('script');
@@ -87,7 +82,8 @@
                 onSSOComplete: (result, resetFunc) => {
                     //console.log('sso-complete', result)
                     $('#blockpass-connect-button').fadeOut(0, function() {
-                        $('#instructions').fadeOut(500, function() {})
+                        $('#service-name').fadeOut(500, function() {})
+                        $('#subtitle').fadeOut(500, function() {})
                         $('#welcome').fadeIn(500, function() {})
                     })
                 }
@@ -95,138 +91,125 @@
             document.body.appendChild(s);
         })();
     </script>
-    <section style="background-color: #fff;">
-        <div style="background-color: #E6E6E6;text-align: center">
+    <section>
+        <div style="text-align: center">
             <div class="container" style="position:relative;">
                 <div class="row">
                     <div class="content-size text-xs-center">
-                        <img src="assets/images/logo-blockpass-foundation.png" class="main-logo" />
+                        <img src="assets/images/bca-logo.png" class="main-logo" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="content-size text-xs-center">
-                        <p class="main-title"><span id="service-name">Blockpass</span></p>
-                        <div class="environment">Environment: <span id="env">prod</span></div>                        
+                        <p class="main-title"><span id="service-name">Blockchain Advisory</span></p>
+                        <p><span id="subtitle">Click Blockpass Connect and scan the QR code to start your registration</span></p>
                     </div>
                 </div>
-                <div class="hidden-sm-down" style="top:50px;left:25%;position:absolute;width:15px;height:15px;background-color:black;"></div>
-                <div class="hidden-sm-down" style="top:80px;right:34%;position:absolute;width:8px;height:8px;background-color:black;"></div>
-                <div class="hidden-sm-down" style="bottom:142px;left:25%;position:absolute;width:8px;height:8px;background-color:black;"></div>
-                <div class="hidden-sm-down" style="bottom:115px;right:15%;position:absolute;width:15px;height:15px;background-color:black;"></div>
-                <div class="hidden-sm-down" style="bottom:35px;left:15%;position:absolute;width:8px;height:8px;background-color:black;"></div>
-                <div class="hidden-sm-down" style="bottom:25px;left:75%;position:absolute;width:8px;height:8px;background-color:black;"></div>
             </div>
 
             <div class="container">
                 <div style="text-align:center">
                     <div id="blockpass-connect-button"></div>
-
                     <div class="mobile-user-only"">
                         <p>It seems that your are using a phone...<br /> 
                         Do you have Blockpass mobile app already installed?</p>
                         <p><a href="#" id="blockpass-app-link">Click here to launch the app and register</a></p>
                     </div>
-
                 </div>
 
                 <div style="text-align:center; display:none; background-color:transparent" id="welcome">
-                    <div class="container-form">
-                        <div class="container-form-inner">
-                            <p class="name-container" id="welcome">Done!</p>
-                            <p>Help us improving Blockpass, let us know how was your experience by filling this survey:</p>
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-mAs7LmsjtW0dWaYwvLB8HkATm4W5tF6kJjiYUXsW9djheQ/viewform?embedded=true" width="600" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                    <div class="container-forma">
+                        <div class="container-form-innera">
+                            <p class="name-container">Thanks</p> 
+                            <p>Finish your registration by submitting the following information</p>
+                            
+    <iframe
+    id="JotFormIFrame-90981722709465"
+    onload="window.parent.scrollTo(0,0)"
+    allowtransparency="true"
+    allowfullscreen="true"
+    allow="geolocation; microphone; camera"
+    src="https://form.jotform.me/90981722709465"
+    frameborder="0"
+    style="width: 1px;
+    min-width: 100%;
+    height:539px;
+    border:none;"
+    scrolling="no"
+  >
+  </iframe>
+  <script type="text/javascript">
+    var ifr = document.getElementById("JotFormIFrame-90981722709465");
+    // if(window.location.href && window.location.href.indexOf("?") > -1) {
+    //   var get = window.location.href.substr(window.location.href.indexOf("?") + 1);
+    //   if(ifr && get.length > 0) {
+    //     var src = ifr.src;
+    //     src = src.indexOf("?") > -1 ? src + "&" + get : src  + "?" + get;
+    //     ifr.src = src;
+    //   }
+    // }
+    window.handleIFrameMessage = function(e) {
+      if (typeof e.data === 'object') { return; }
+      var args = e.data.split(":");
+      if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+      if (!iframe) { return; }
+      switch (args[0]) {
+        case "scrollIntoView":
+          iframe.scrollIntoView();
+          break;
+        case "setHeight":
+          iframe.style.height = args[1] + "px";
+          break;
+        case "collapseErrorPage":
+          if (iframe.clientHeight > window.innerHeight) {
+            iframe.style.height = window.innerHeight + "px";
+          }
+          break;
+        case "reloadPage":
+          window.location.reload();
+          break;
+        case "loadScript":
+          var src = args[1];
+          if (args.length > 3) {
+              src = args[1] + ':' + args[2];
+          }
+          var script = document.createElement('script');
+          script.src = src;
+          script.type = 'text/javascript';
+          document.body.appendChild(script);
+          break;
+        case "exitFullscreen":
+          if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+          else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+          else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+          else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+          else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+          break;
+      }
+      var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+      if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+        var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+        iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+      }
+    };
+    if (window.addEventListener) {
+      window.addEventListener("message", handleIFrameMessage, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onmessage", handleIFrameMessage);
+    }
+    </script>
 
-                            <p style="font-weight:bold; font-size:20px;clear:both;">Join our Telegram group</p>
-                            <a class="_2kgOa" href="https://t.me/blockpass" target="_blank" data-reactid="350">
-                                <img src="assets/images/e9489302.svg" alt="Join Blockpass Telegram group" style="width:50px;margin-bottom:20px;">
-                            </a>
+                            
                         </div>
-                        <div class="black-square stop-left "></div>
-                        <div class="black-square stop-right "></div>
-                        <div class="black-square sbottom-left "></div>
-                        <div class="black-square sbottom-right "></div>
                     </div>
                 </div>
                 <div><p>&nbsp;</p></div>
             </div>
         </div>
-
-        <div class="container" id="instructions">
-            <div class="row">
-                <div class="content-size text-xs-center">
-                    <p class="main-subtitle1">USER INSTRUCTIONS</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-xs-center">
-                    <img src="assets/images/arrow.png" class="top-icon" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-xs-center" style="padding-top:20px;">
-                    <p class="step-number hidden-sm-down" style="font-size:30px">1.</p>
-                    <p class="icon-sub" style="margin-bottom:0; font-size:14px">Download Blockpass mobile app</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2 content-size text-xs-center">
-                </div>
-                <div class="col-md-4 content-size text-xs-center">
-                    <p>
-                        <a id="ios" href="https://itunes.apple.com/us/app/blockpass/id1322917010?ls=1&mt=8" target="_blank">
-                            <img src="assets/images/apple.png" class="store-icon" />
-                            <br /> iPhone app
-                        </a>
-                    </p>
-                </div>
-                <div class="col-md-4 content-size text-xs-center">
-                    <p>
-                        <a id="android" href="https://play.google.com/store/apps/details?id=com.blockpass_mobile" target="_blank">
-                            <img src="assets/images/android.png" class="store-icon" style="margin-left: -7px;" />
-                            <br /> Android app
-                        </a>
-                    </p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                </div>
-            </div>
-            <div class="row hidden-sm-down text-xs-center">
-                <div class="col-md-1 content-size text-xs-center">
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                    <img src="assets/images/2.png" class="main-icon" />
-                    <p class="step-number">2.</p>
-                    <p class="icon-sub">Create your identity</p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                    <img src="assets/images/3.png" class="main-icon" />
-                    <p class="step-number">3.</p>
-                    <p class="icon-sub">Submit your info</p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                    <img src="assets/images/4.png" class="main-icon" />
-                    <p class="step-number">4.</p>
-                    <p class="icon-sub">Click Connect with Blockpass</p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                    <img src="assets/images/5.png" class="main-icon" />
-                    <p class="step-number">5.</p>
-                    <p class="icon-sub">Scan the QR Code with app</p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                    <img src="assets/images/6.png" class="main-icon" />
-                    <p class="step-number">6.</p>
-                    <p class="icon-sub">Confirm registration in app</p>
-                </div>
-                <div class="col-md-2 content-size text-xs-center">
-                </div>
-            </div>
-        </div>
     </section>
-    <footer class="" style="background-color:#fff;padding-top:30px;text-align: center;">
+    <footer class="" style="padding-top:30px;text-align: center;">
         <div class="container footer-text">
-            <p>info@blockpass.org
-                <br /> Copyright 2018 Blockpass - All rights reserved.</p>
+            <p>Copyright 2019 Blockpass - All rights reserved.</p>
         </div>
     </footer>
 </body>

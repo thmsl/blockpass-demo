@@ -1,6 +1,11 @@
+body {
+    background-color: #3e3e3e;
+    color: #ddd;
+}
 .row,
 .container {
     max-width: 930px !important;
+    
 }
 
 .main-logo {
@@ -79,13 +84,13 @@
     margin: auto;
     margin-top: 70px;
     margin-bottom: 70px;
-    background-color: white;
+    background-color: transparent !important;
     display: inline-block;
 }
 
 .container-form-inner {
     position: relative;
-    background-color: white;
+    background-color: transparent !important;
     z-index: 10;
     margin: auto;
     padding: 15px;
@@ -106,42 +111,12 @@
     margin: auto;
 }
 
-.black-square {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    background-color: black;
-}
-
-.stop-left {
-    top: -10px;
-    left: -10px;
-}
-
-.stop-right {
-    top: -10px;
-    right: -10px;
-}
-
-.sbottom-left {
-    bottom: -10px;
-    left: -10px;
-}
-
-.sbottom-right {
-    bottom: -10px;
-    right: -10px;
-}
-
-
 .name-container {
     background-color: transparent;
     border: 0;
     font-weight: bold;
     font-size: 45px;
     text-align: center;
-    color: black;
-    margin-bottom: 100px;
 }
 
 .footer-text {
@@ -154,7 +129,7 @@
 
 #blockpass-app-link {
     display: inline-block;
-    color:black;
+    color:#ddd;
     border: 1px solid black;
     border-radius: 3px;
     padding: 10px
@@ -168,12 +143,6 @@
     }
     .name-container {
         font-size: 30px;
-    }
-    .black-square {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        background-color: black;
     }
     .mobile-user-only{
         display: block;
